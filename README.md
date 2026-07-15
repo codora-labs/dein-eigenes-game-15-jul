@@ -4,7 +4,7 @@ Statische GitHub-Pages-Ausgabe für acht Browsergames aus dem Codora Game Lab.
 
 ## Veröffentlichen
 
-Der Git-Remote ist bereits auf `git@github.com:codora-labs/dein-eigenes-game-15-jul.git` gesetzt.
+Der Git-Remote ist bereits auf `git@github.com:codora-labs/dein-eigenes-game.git` gesetzt.
 
 ```sh
 git add .
@@ -14,7 +14,7 @@ git push -u origin main
 
 Danach im GitHub-Repository unter **Settings → Pages → Build and deployment** als Source **GitHub Actions** auswählen. Der Workflow veröffentlicht die Seite bei jedem Push auf `main`.
 
-Die Seite ist anschließend unter <https://codora-labs.github.io/dein-eigenes-game-15-jul/> erreichbar.
+Die Seite ist anschließend unter <https://codora-labs.github.io/dein-eigenes-game/> erreichbar.
 
 ## Struktur
 
@@ -22,4 +22,4 @@ Die Seite ist anschließend unter <https://codora-labs.github.io/dein-eigenes-ga
 - Ein Unterordner pro Game: fertiger Web-Build mit passendem GitHub-Pages-Basispfad
 - `.github/workflows/pages.yml`: automatisches Deployment
 
-Die Flutter-Ausgaben wurden für `/dein-eigenes-game-15-jul/<game-ordner>/` gebaut.
+Die Flutter-Ausgaben verwenden den Basispfad `/dein-eigenes-game/<game-ordner>/`.

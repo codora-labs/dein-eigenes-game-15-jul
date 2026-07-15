@@ -5,138 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Acht selbst entwickelte Webgames – direkt im Browser spielbar."
+      content="Acht selbst entwickelte Spiele – direkt im Browser spielbar."
     />
-    <meta name="theme-color" content="#0f1020" />
-    <title>Dein eigenes Game · Game Gallery</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23d4ff4f'/%3E%3Cpath d='M39 18 22 32l17 14V18Z' fill='%230f1020'/%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <title>Unsere Spiele · Codora Spielewerkstatt</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23d4ff4f'/%3E%3Cpath d='M39 18 22 32l17 14V18Z' fill='%23181720'/%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
-        <nav class="nav" aria-label="Hauptnavigation">
-          <a class="brand" href="./" aria-label="Zur Startseite">
-            <span class="brand-mark" aria-hidden="true">C</span>
-            <span>Codora Game Lab</span>
-          </a>
-          <span class="game-count">8 Games · 1 Sammlung</span>
-        </nav>
-
-        <div class="hero-copy">
-          <p class="eyebrow">Dein eigenes Game · 15. Juli</p>
-          <h1>Acht Ideen.<br /><em>Acht Spielwelten.</em></h1>
-          <p class="intro">
-            Von eisigen Parcours bis zu leuchtenden Kristallwelten: Wähle ein
-            Game und spiele direkt im Browser.
-          </p>
-          <a class="jump-link" href="#games">Games entdecken <span>↓</span></a>
-        </div>
-
-        <div class="hero-orbit" aria-hidden="true">
-          <span class="orbit orbit-one"></span>
-          <span class="orbit orbit-two"></span>
-          <span class="spark spark-one">✦</span>
-          <span class="spark spark-two">✦</span>
-          <span class="hero-symbol">▶</span>
-        </div>
+    <div class="seite">
+      <header class="kopfzeile">
+        <a class="marke" href="./" aria-label="Zur Spieleübersicht">
+          <span class="markenzeichen" aria-hidden="true">C</span>
+          <span>Codora Spielewerkstatt</span>
+        </a>
+        <span class="anzahl">8 Spiele</span>
       </header>
 
-      <main id="games">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Game Gallery</p>
-            <h2>Womit fängst du an?</h2>
+      <main>
+        <section class="einleitung" aria-labelledby="seitentitel">
+          <p class="datum">Dein eigenes Game · 15. Juli 2026</p>
+          <h1 id="seitentitel">Unsere Spiele</h1>
+          <p class="vorspann">
+            Acht eigene Ideen, umgesetzt als kleine Browsergames. Such dir ein
+            Spiel aus und leg direkt los.
+          </p>
+        </section>
+
+        <section class="spiele" aria-labelledby="spiele-titel">
+          <div class="listen-kopf">
+            <h2 id="spiele-titel">Alle Spiele</h2>
+            <p>Öffnen sich jeweils in einem neuen Tab.</p>
           </div>
-          <p>Alle Games öffnen sich in einem neuen Tab.</p>
-        </div>
 
-        <div class="game-grid">
-          <a class="game-card card-yellow" href="./cedric-backroom-escape/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">↪</span><span class="art-code">01</span></div>
-            <div class="card-body">
-              <span class="creator">Cedric</span>
-              <h3>Endlose Flure</h3>
-              <p>Finde deinen Weg durch rätselhafte Räume und entkomme dem endlosen Labyrinth.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+          <ol class="spieleliste">
+            <li style="--akzent: #e5b91f">
+              <a href="./cedric-backroom-escape/" target="_blank" rel="noopener">
+                <span class="nummer">01</span>
+                <span class="spielname">
+                  <span class="urheber">Von Cedric</span>
+                  <strong>Endlose Flure</strong>
+                </span>
+                <span class="beschreibung">Finde deinen Weg durch rätselhafte Räume und entkomme dem endlosen Labyrinth.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-purple" href="./jannis-oktopus/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">◉</span><span class="art-code">02</span></div>
-            <div class="card-body">
-              <span class="creator">Jannis</span>
-              <h3>Oktopus Flucht</h3>
-              <p>Tauche ab und bringe den Oktopus sicher durch eine geheimnisvolle Unterwasserwelt.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #8f68e8">
+              <a href="./jannis-oktopus/" target="_blank" rel="noopener">
+                <span class="nummer">02</span>
+                <span class="spielname">
+                  <span class="urheber">Von Jannis</span>
+                  <strong>Oktopus Flucht</strong>
+                </span>
+                <span class="beschreibung">Bringe den Oktopus sicher durch eine geheimnisvolle Unterwasserwelt.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-orange" href="./leilani-arvid-kristallwelten/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">◆</span><span class="art-code">03</span></div>
-            <div class="card-body">
-              <span class="creator">Leilani &amp; Arvid</span>
-              <h3>Kristallwelten</h3>
-              <p>Erkunde funkelnde Welten, finde Helfer und öffne den Weg zum nächsten Abenteuer.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #ed8540">
+              <a href="./leilani-arvid-kristallwelten/" target="_blank" rel="noopener">
+                <span class="nummer">03</span>
+                <span class="spielname">
+                  <span class="urheber">Von Leilani &amp; Arvid</span>
+                  <strong>Kristallwelten</strong>
+                </span>
+                <span class="beschreibung">Erkunde funkelnde Welten, finde Helfer und öffne den Weg zum nächsten Abenteuer.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-lime" href="./liyas-saeulen-springen/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">▥</span><span class="art-code">04</span></div>
-            <div class="card-body">
-              <span class="creator">Liya</span>
-              <h3>Säulen-Sprung</h3>
-              <p>Springe von Säule zu Säule, halte die Balance und erreiche das Ziel.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #8cab31">
+              <a href="./liyas-saeulen-springen/" target="_blank" rel="noopener">
+                <span class="nummer">04</span>
+                <span class="spielname">
+                  <span class="urheber">Von Liya</span>
+                  <strong>Säulen-Sprung</strong>
+                </span>
+                <span class="beschreibung">Springe von Säule zu Säule, halte die Balance und erreiche das Ziel.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-teal" href="./loic-meadow-flight/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">⌁</span><span class="art-code">05</span></div>
-            <div class="card-body">
-              <span class="creator">Loïc</span>
-              <h3>Meadow Flight</h3>
-              <p>Fliege leichtfüßig durch eine farbenfrohe Wiesenwelt voller kleiner Herausforderungen.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #2ea98e">
+              <a href="./loic-meadow-flight/" target="_blank" rel="noopener">
+                <span class="nummer">05</span>
+                <span class="spielname">
+                  <span class="urheber">Von Loïc</span>
+                  <strong>Meadow Flight</strong>
+                </span>
+                <span class="beschreibung">Fliege durch eine farbenfrohe Wiesenwelt voller kleiner Herausforderungen.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-blue" href="./maximilian-super-mario/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">❄</span><span class="art-code">06</span></div>
-            <div class="card-body">
-              <span class="creator">Maximilian</span>
-              <h3>Frostlauf</h3>
-              <p>Springe durch die eisige Welt, entdecke Feuerblumen und bringe den Frühling zurück.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #398bc8">
+              <a href="./maximilian-super-mario/" target="_blank" rel="noopener">
+                <span class="nummer">06</span>
+                <span class="spielname">
+                  <span class="urheber">Von Maximilian</span>
+                  <strong>Frostlauf</strong>
+                </span>
+                <span class="beschreibung">Springe durch die eisige Welt und bringe mit Feuerblumen den Frühling zurück.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-cyan" href="./tim-logidofi/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">⌁</span><span class="art-code">07</span></div>
-            <div class="card-body">
-              <span class="creator">Tim</span>
-              <h3>Waldlicht-Bogen</h3>
-              <p>Teste deine Geschicklichkeit in einem magisch leuchtenden Waldabenteuer.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
+            <li style="--akzent: #22a8c4">
+              <a href="./tim-logidofi/" target="_blank" rel="noopener">
+                <span class="nummer">07</span>
+                <span class="spielname">
+                  <span class="urheber">Von Tim</span>
+                  <strong>Waldlicht-Bogen</strong>
+                </span>
+                <span class="beschreibung">Teste deine Geschicklichkeit in einem magisch leuchtenden Waldabenteuer.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
 
-          <a class="game-card card-pink" href="./tyler-keksrun/" target="_blank" rel="noopener">
-            <div class="card-art" aria-hidden="true"><span class="art-icon">✿</span><span class="art-code">08</span></div>
-            <div class="card-body">
-              <span class="creator">Tyler</span>
-              <h3>Keks-Kunterbunt</h3>
-              <p>Sammle bunte Kekse und meistere einen rasanten Lauf voller Überraschungen.</p>
-              <span class="play">Jetzt spielen <b>↗</b></span>
-            </div>
-          </a>
-        </div>
+            <li style="--akzent: #dc5d98">
+              <a href="./tyler-keksrun/" target="_blank" rel="noopener">
+                <span class="nummer">08</span>
+                <span class="spielname">
+                  <span class="urheber">Von Tyler</span>
+                  <strong>Keks-Kunterbunt</strong>
+                </span>
+                <span class="beschreibung">Sammle bunte Kekse und meistere einen Lauf voller Überraschungen.</span>
+                <span class="aktion">Spielen <b>↗</b></span>
+              </a>
+            </li>
+          </ol>
+        </section>
       </main>
 
       <footer>
         <span>Gebaut mit Ideen, Code und Neugier.</span>
-        <span>Codora Game Lab · 2026</span>
+        <span>Codora · 2026</span>
       </footer>
     </div>
   </body>

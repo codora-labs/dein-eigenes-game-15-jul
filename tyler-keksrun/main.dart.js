@@ -54372,15 +54372,16 @@ k.y=r>0
 r=b.gkB()
 if(b.gkB()!==0)k.x=b.gkB()>0
 q=b.c
-if(q&&!k.at&&k.Sv(k.e)!=null)k.f=-560
+if(q&&!k.at&&k.Sv(k.e)!=null)k.f=-700
 k.at=q
 if(b.d&&k.Q<=0){k.Q=0.28
-k.y=!0}q=k.f+1450*s
-k.f=q
-q=k.e.U(0,new A.z(r*260*s,q*s))
-k.e=q
-k.e=new A.z(B.c.cJ(q.a,22,3178),k.e.b)
-k.Qb()
+k.y=!0}q=k.e
+p=k.f+1450*s
+k.f=p
+p=q.U(0,new A.z(r*260*s,p*s))
+k.e=p
+k.e=new A.z(B.c.cJ(p.a,22,3178),k.e.b)
+k.Qb(q.b+51)
 r=k.c
 r===$&&A.b()
 r=B.b.gK(r)
@@ -54423,13 +54424,13 @@ s.c=A.d([new A.eg(B.Dh),new A.eg(B.Di),new A.eg(B.D6),new A.eg(B.D8),new A.eg(B.
 Sv(a){var s,r,q,p
 for(s=a.a,r=a.b+51,q=0;q<10;++q){p=B.h8[q]
 if(s>=p.a-18&&s<=p.c+18&&Math.abs(r-p.b)<4)return p}return null},
-Qb(){var s,r,q,p,o,n,m=this,l=m.f
-if(l<0)return
-for(s=m.e,r=s.a,q=s.b+51,p=q-l*0.05,o=0;o<10;++o){n=B.h8[o]
-l=!1
-if(r>=n.a-18)if(r<=n.c+18){l=n.b
-l=p<=l&&q>=l}if(l){m.e=new A.z(r,n.b-51)
-m.f=0
+Qb(a){var s,r,q,p,o,n=this
+if(n.f<0)return
+for(s=n.e,r=s.a,q=s.b+51,p=0;p<10;++p){o=B.h8[p]
+s=!1
+if(r>=o.a-18)if(r<=o.c+18){s=o.b
+s=a<=s&&q>=s}if(s){n.e=new A.z(r,o.b-51)
+n.f=0
 return}}}}
 A.N7.prototype={
 $1(a){return!a.c},
@@ -54615,7 +54616,8 @@ A.yD.prototype={
 P(a){return B.yK}}
 A.m5.prototype={
 a_L(){var s=this.a,r=s.d
-if((r===B.ba?s.d=B.h1:r)===B.h1)s.d=B.ba
+if(r===B.ba)s.d=B.h1
+else if(r===B.h1)s.d=B.ba
 return null},
 qq(){return this.a.qq()}}
 A.D7.prototype={
@@ -58888,7 +58890,7 @@ B.Df=new A.z(2570,350)
 B.Dg=new A.z(2900,470)
 B.Dh=new A.z(415,610)
 B.Di=new A.z(700,395)
-B.ea=new A.z(95,580)
+B.ea=new A.z(95,599)
 B.Dl=new A.z(-0.3333333333333333,0)
 B.Dn=new A.z(1/0,0)
 B.pe=new A.z(-0.25,0)

@@ -8,15 +8,15 @@ const gameOverScreen = document.querySelector('#gameOverScreen');
 const pauseLabel = document.querySelector('#pauseLabel');
 const finalText = document.querySelector('#finalText');
 
-const W = canvas.width, H = canvas.height, ground = 590;
+const W = canvas.width, H = canvas.height, ground = 590, gravity = 1900, jumpSpeed = 820;
 const keys = {}; let state = 'start', last = 0, camera = 0, score = 0, distance = 0;
 let best = Number(localStorage.getItem('frostlauf-best') || 0), spawnAt = 800, particles = [], enemies = [], platforms = [], blocks = [], powerups = [], fireballs = [], season = 'winter';
 bestEl.textContent = `${best} m`;
 
-const player = { x:190, y:ground-92, w:58, h:86, vx:0, vy:0, grounded:true, facing:1, fire:false, riding:false, shootDelay:0 };
+const player = { x:190, y:ground-86, w:58, h:86, vx:0, vy:0, grounded:true, facing:1, fire:false, riding:false, shootDelay:0 };
 
 function reset() {
-  Object.assign(player,{x:190,y:ground-92,vx:0,vy:0,grounded:true,facing:1,fire:false,riding:false,shootDelay:0}); season='winter';
+  Object.assign(player,{x:190,y:ground-player.h,vx:0,vy:0,grounded:true,facing:1,fire:false,riding:false,shootDelay:0}); season='winter';
   camera=0; score=0; distance=0; spawnAt=700; enemies=[]; platforms=[]; blocks=[]; powerups=[]; fireballs=[]; particles=[];
   for(let x=650;x<2500;x+=420+Math.random()*220) addSection(x);
   state='playing'; startScreen.classList.add('hidden'); gameOverScreen.classList.add('hidden'); updateHud();
@@ -34,7 +34,7 @@ function addSection(x){
   } else addEnemy(x,Math.random()>.55?'lizard':'mushroom',ground);
   if(Math.random()>.48) blocks.push({x:x+100+Math.random()*100,y:ground-205-Math.random()*55,w:54,h:54,used:false,bump:0});
 }
-function jump(){ if(state==='start'||state==='over'){ reset(); return; } if(state==='paused') return; if(player.grounded){player.vy=-720;player.grounded=false;burst(player.x+player.w/2,ground-3,'#d9faff',8);} }
+function jump(){ if(state==='start'||state==='over'){ reset(); return; } if(state==='paused') return; if(player.grounded){player.vy=-jumpSpeed;player.grounded=false;burst(player.x+player.w/2,ground-3,'#d9faff',8);} }
 function gameOver(){ state='over'; best=Math.max(best,Math.floor(distance));localStorage.setItem('frostlauf-best',best);bestEl.textContent=`${best} m`;finalText.textContent=`Du bist ${Math.floor(distance)} Meter weit gekommen.`;gameOverScreen.classList.remove('hidden'); }
 function updateHud(){scoreEl.textContent=String(score).padStart(4,'0');distanceEl.textContent=`${Math.floor(distance)} m`;}
 function burst(x,y,color,n){for(let i=0;i<n;i++)particles.push({x,y,vx:(Math.random()-.5)*260,vy:-Math.random()*240-40,life:.7+Math.random()*.4,color,size:3+Math.random()*6});}
@@ -44,7 +44,7 @@ function update(dt){
   if(state!=='playing')return;
   const dir=(keys.ArrowRight||keys.KeyD?1:0)-(keys.ArrowLeft||keys.KeyA?1:0);
   player.vx += dir*(player.riding?1350:1100)*dt; player.vx *= Math.pow(.003,dt); player.vx=Math.max(player.riding?-340:-280,Math.min(player.riding?510:420,player.vx));
-  if(dir)player.facing=dir; player.vy+=1900*dt; player.x+=player.vx*dt; player.y+=player.vy*dt;
+  if(dir)player.facing=dir; player.vy+=gravity*dt; player.x+=player.vx*dt; player.y+=player.vy*dt;
   player.shootDelay=Math.max(0,player.shootDelay-dt);
   if(player.vy<0){
     const oldTop=player.y-player.vy*dt;
@@ -57,7 +57,7 @@ function update(dt){
       if(player.x+player.w>p.x+5&&player.x<p.x+p.w-5&&oldFeet<=p.y&&player.y+player.h>=p.y) landingY=Math.min(landingY,p.y);
     }
   }
-  if(player.y+player.h>=landingY){player.y=landingY-player.h;player.vy=0;player.grounded=true;}
+  if(player.y+player.h>=landingY){player.y=landingY-player.h;player.vy=0;player.grounded=true;}else{player.grounded=false;}
   player.x=Math.max(camera+35,player.x); camera=Math.max(0,player.x-260); distance=camera/18;
   if(camera+W>spawnAt){addSection(spawnAt+W);spawnAt+=390+Math.random()*330;}
   for(const e of enemies){

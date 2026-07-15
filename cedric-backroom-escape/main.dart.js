@@ -57291,63 +57291,65 @@ r.toString
 if(a===s.c)return
 if(a===B.d3||s.z>=r){s.c=a
 s.Q="SKIN: "+a.b.toUpperCase()}else s.Q="NOCH "+(r-s.z)+" M\xdcNZEN"},
-en(a,b){var s,r,q,p,o,n,m,l,k=this
-if(k.b!==B.bg)return
+en(a,b){var s,r,q,p,o,n,m,l,k,j=this
+if(j.b!==B.bg)return
 s=B.c.cO(a,0,0.05)
 r=150*s
-k.r=k.r+r
-q=k.d
+j.r=j.r+r
+q=j.d
 p=b.b?1:0
-k.d=B.c.cO(q+(p-(b.a?1:0))*250*s,65,430)
+j.d=B.c.cO(q+(p-(b.a?1:0))*250*s,65,430)
 q=b.c
-if(q&&!k.as&&k.f===0)k.f=-590
-k.as=q
-q=k.f=k.f+1500*s
-k.e=Math.min(430,k.e+q*s)
-if(q===0&&q>0)k.f=0
-q=Math.max(0,k.w-s)
-k.w=q
-k.x=Math.max(0,k.x-s)
-if(b.d&&q===0){k.w=0.7
-k.x=0.22
-k.Om()}q=A.V(k.at,t.DF)
-B.b.H(q,k.ax)
+if(q&&!j.as&&j.f===0)j.f=-720
+j.as=q
+o=j.e
+q=j.f+1500*s
+j.f=q
+j.e=o+q*s
+q=Math.max(0,j.w-s)
+j.w=q
+j.x=Math.max(0,j.x-s)
+if(b.d&&q===0){j.w=0.7
+j.x=0.22
+j.Om()}q=A.V(j.at,t.DF)
+B.b.H(q,j.ax)
 p=q.length
-o=0
-for(;o<p;++o)q[o].a-=r
-for(q=k.ay,p=q.length,o=0;o<p;++o)q[o].a-=r
-k.Sj()
-for(r=k.at,q=r.length,o=0;o<r.length;r.length===q||(0,A.o)(r),++o){n=r[o]
-if(!n.c){p=k.d
-m=k.e
-p-=n.a
-m-=n.b
-m=Math.sqrt(p*p+m*m)<28
-p=m}else p=!1
-if(p){n.c=!0;++k.y;++k.z
-k.Q="+1 M\xdcNZE"}}for(r=k.ax,q=r.length,o=0;o<r.length;r.length===q||(0,A.o)(r),++o){l=r[o]
-if(!l.c){p=k.d
-m=k.e
-p-=l.a
-m-=l.b
-m=Math.sqrt(p*p+m*m)<36
-p=m}else p=!1
-if(p){k.b=B.zv
-k.Q="VOM ECHO BER\xdcHRT"
-return}}if(k.r>=7000){k.b=B.jW
-k.Q="AUSGANG GEFUNDEN"}},
+n=0
+for(;n<p;++n)q[n].a-=r
+for(q=j.ay,p=q.length,n=0;n<p;++n)q[n].a-=r
+j.Sj(o)
+if(j.e>=430){j.e=430
+if(j.f>0)j.f=0}for(r=j.at,q=r.length,n=0;n<r.length;r.length===q||(0,A.o)(r),++n){m=r[n]
+if(!m.c){p=j.d
+l=j.e
+p-=m.a
+l-=m.b
+l=Math.sqrt(p*p+l*l)<28
+p=l}else p=!1
+if(p){m.c=!0;++j.y;++j.z
+j.Q="+1 M\xdcNZE"}}for(r=j.ax,q=r.length,n=0;n<r.length;r.length===q||(0,A.o)(r),++n){k=r[n]
+if(!k.c){p=j.d
+l=j.e
+p-=k.a
+l-=k.b
+l=Math.sqrt(p*p+l*l)<36
+p=l}else p=!1
+if(p){j.b=B.zv
+j.Q="VOM ECHO BER\xdcHRT"
+return}}if(j.r>=7000){j.b=B.jW
+j.Q="AUSGANG GEFUNDEN"}},
 Om(){var s,r,q,p
 for(s=this.ax,r=s.length,q=0;q<r;++q){p=s[q]
 if(Math.abs(p.a-this.d)<165)p.c=!0}this.Q="LICHTIMPULS"},
-Sj(){var s,r,q,p,o,n,m,l,k,j,i=this,h=i.f
-if(h<0)return
-for(s=i.ay,r=s.length,q=i.e+23,h*=0.05,p=i.d,o=p+13,p-=13,n=0;n<r;++n){m=s[n]
-l=m.b
-k=!1
-if(q>=l)if(q<=l+h+14){j=m.a
-j=o>j&&p<j+m.c
-k=j}if(k){i.e=l-23
-i.f=0
+Sj(a){var s,r,q,p,o,n,m,l,k,j,i,h=this
+if(h.f<0)return
+for(s=h.ay,r=s.length,q=a+23,p=h.e+23,o=h.d,n=o+13,o-=13,m=0;m<r;++m){l=s[m]
+k=l.b
+j=!1
+if(q<=k)if(p>=k){i=l.a
+i=n>i&&o<i+l.c
+j=i}if(j){h.e=k-23
+h.f=0
 return}}},
 ri(){var s,r,q,p,o=this
 o.b=B.bg

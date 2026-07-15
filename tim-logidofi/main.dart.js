@@ -54389,7 +54389,7 @@ k=B.c.ct(k.a+j*230*a,24,2850+l.b*170-24)
 r=l.Q.b
 l.Q=new A.v(k,r)
 q=b.e
-if(q&&!l.fx&&l.ax){l.at=-470
+if(q&&!l.fx&&l.ax){l.at=-600
 l.ax=!1}l.fx=q
 q=l.at=l.at+1050*a
 p=r+q*a
