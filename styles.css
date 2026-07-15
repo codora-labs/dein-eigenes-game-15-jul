@@ -108,6 +108,33 @@ h1 {
   line-height: 1.55;
 }
 
+.kurs-link {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 13px 16px;
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.kurs-link strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.kurs-link:hover,
+.kurs-link:focus-visible {
+  border-color: #a8ca37;
+  background: #e8ff91;
+  outline: none;
+}
+
 .listen-kopf {
   display: flex;
   align-items: end;
@@ -247,6 +274,13 @@ footer {
     margin-bottom: 58px;
   }
 
+  .kurs-link {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .listen-kopf {
     display: block;
   }
@@ -299,7 +333,8 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spieleliste a {
+  .spieleliste a,
+  .kurs-link {
     transition: none;
   }
 }

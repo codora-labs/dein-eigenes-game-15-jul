@@ -1,0 +1,198 @@
+:root {
+  --kurs-ink: #17141f;
+  --kurs-paper: #fbfaf6;
+  --kurs-purple: #7050f4;
+  --kurs-lime: #d7ff4f;
+}
+
+body.kurs-vorschau {
+  overflow: hidden;
+}
+
+.kurs-overlay,
+.kurs-overlay * {
+  box-sizing: border-box;
+}
+
+.kurs-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: clamp(16px, 4vw, 52px);
+  color: var(--kurs-ink);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(215, 255, 79, 0.22), transparent 28rem),
+    radial-gradient(circle at 88% 90%, rgba(112, 80, 244, 0.25), transparent 30rem),
+    #17141f;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.kurs-overlay__karte {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  width: min(1050px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 26px;
+  background: var(--kurs-paper);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+}
+
+.kurs-overlay__bild {
+  min-height: 390px;
+  background: #292431;
+}
+
+.kurs-overlay__bild img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kurs-overlay__inhalt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(30px, 5vw, 60px);
+}
+
+.kurs-overlay__label {
+  width: fit-content;
+  margin: 0 0 20px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #4d339e;
+  background: #ece7ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.kurs-overlay h1 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--kurs-ink);
+  font-size: clamp(34px, 4.5vw, 56px);
+  font-weight: 850;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.kurs-overlay__text {
+  margin: 22px 0 28px;
+  color: #57515e;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+}
+
+.kurs-overlay__aktionen {
+  display: grid;
+  gap: 11px;
+}
+
+.kurs-overlay__aktionen a,
+.kurs-overlay__aktionen button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 18px;
+  border: 2px solid var(--kurs-ink);
+  border-radius: 13px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.kurs-overlay__aktionen a {
+  color: var(--kurs-ink);
+  background: var(--kurs-lime);
+  box-shadow: 4px 4px 0 var(--kurs-ink);
+}
+
+.kurs-overlay__aktionen button {
+  color: var(--kurs-ink);
+  background: transparent;
+}
+
+.kurs-overlay__aktionen a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--kurs-ink);
+}
+
+.kurs-overlay__aktionen button:hover {
+  background: #eeeaf7;
+}
+
+.kurs-overlay__aktionen a:focus-visible,
+.kurs-overlay__aktionen button:focus-visible {
+  outline: 4px solid var(--kurs-purple);
+  outline-offset: 3px;
+}
+
+.kurs-overlay__aktionen button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.kurs-overlay__hinweis {
+  margin: 16px 0 0;
+  color: #77717d;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.kurs-overlay.wird-geschlossen {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+@media (max-width: 760px) {
+  .kurs-overlay {
+    place-items: start center;
+    padding: 12px;
+  }
+
+  .kurs-overlay__karte {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .kurs-overlay__bild {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .kurs-overlay__inhalt {
+    padding: 26px 22px 28px;
+  }
+
+  .kurs-overlay h1 {
+    max-width: 15ch;
+    font-size: clamp(31px, 10vw, 44px);
+  }
+
+  .kurs-overlay__text {
+    margin: 16px 0 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kurs-overlay,
+  .kurs-overlay__aktionen a,
+  .kurs-overlay__aktionen button {
+    transition: none;
+  }
+}
