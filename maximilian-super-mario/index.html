@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#08182f" />
+  <base href="/dein-eigenes-game-15-jul/maximilian-super-mario/" />
+  <title>Frostlauf</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2374b9ff'/%3E%3Cpath d='m32 12 4 14 12-8-8 12 14 2-14 3 8 11-12-8-4 14-4-14-12 8 8-11-14-3 14-2-8-12 12 8 4-14Z' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header>
+      <div class="brand"><span class="brand-dot"></span> FROSTLAUF</div>
+      <div class="header-hint">SPRINGEN · LANDEN · ÜBERLEBEN</div>
+    </header>
+
+    <section class="game-wrap" aria-label="Frostlauf Spiel">
+      <canvas id="game" width="1280" height="720"></canvas>
+
+      <div class="hud" aria-live="polite">
+        <div class="hud-card"><span>PUNKTE</span><strong id="score">0000</strong></div>
+        <div class="hud-card center"><span>WEITE</span><strong id="distance">0 m</strong></div>
+        <div class="hud-card right"><span>REKORD</span><strong id="best">0 m</strong></div>
+      </div>
+
+      <div class="screen" id="startScreen">
+        <div class="eyebrow">EINE EISKALTE MISSION</div>
+        <h1>FROST<br><em>LAUF</em></h1>
+        <p>Entdecke Feuerblumen und grüne Reittiere.<br>Mit ihnen zieht der Frühling ein.</p>
+        <button id="startBtn"><span>SPIEL STARTEN</span><b>→</b></button>
+        <small>SPRINGEN: SPACE / ↑ / W &nbsp; · &nbsp; FEUER: F / X</small>
+      </div>
+
+      <div class="screen hidden" id="gameOverScreen">
+        <div class="eyebrow danger">AUSGERUTSCHT!</div>
+        <h2>GAME<br><em>OVER</em></h2>
+        <p id="finalText">Du bist 0 Meter weit gekommen.</p>
+        <button id="restartBtn"><span>NOCHMAL</span><b>↻</b></button>
+        <small>ENTER ODER LEERTASTE</small>
+      </div>
+
+      <div class="pause hidden" id="pauseLabel">PAUSE</div>
+      <div class="mobile-controls" aria-label="Touch-Steuerung">
+        <button id="leftBtn" aria-label="Nach links">←</button>
+        <button id="jumpBtn" class="jump" aria-label="Springen">↑<span>SPRUNG</span></button>
+        <button id="rightBtn" aria-label="Nach rechts">→</button>
+      </div>
+    </section>
+
+    <footer><span>← → / A D &nbsp; LAUFEN</span><span>F / X &nbsp; FEUER</span><span>↑ / W / SPACE &nbsp; SPRINGEN</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
