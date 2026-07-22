@@ -15,7 +15,17 @@
 
   document.body.append(banner);
   const root = document.documentElement;
+  const hud = document.querySelector(".hud");
+  const updateHudPosition = () => {
+    if (!hud) return;
+    hud.classList.remove("kurs-hud-unten");
+    const style = window.getComputedStyle(hud);
+    if (style.position === "fixed" && style.top === "auto" && style.bottom !== "auto") {
+      hud.classList.add("kurs-hud-unten");
+    }
+  };
   const updateOffset = () => {
+    updateHudPosition();
     const height = Math.ceil(banner.getBoundingClientRect().height);
     root.style.setProperty("--kurs-banner-offset", `${height + 24}px`);
   };
@@ -29,6 +39,7 @@
     banner.classList.add("wird-geschlossen");
     root.classList.remove("kurs-banner-sichtbar");
     root.style.removeProperty("--kurs-banner-offset");
+    hud?.classList.remove("kurs-hud-unten");
     resizeObserver?.disconnect();
     window.removeEventListener("resize", updateOffset);
     window.setTimeout(() => banner.remove(), 170);

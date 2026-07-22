@@ -99,7 +99,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) and (min-width: 761px) {
-  html.kurs-banner-sichtbar body[data-theme] .hud {
+  html.kurs-banner-sichtbar body[data-theme] .hud.kurs-hud-unten {
     bottom: var(--kurs-banner-offset, 106px);
   }
 }
