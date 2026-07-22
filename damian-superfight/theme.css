@@ -1,0 +1,20 @@
+body[data-theme="superfight"] { --blue:#55c7ff; --lime:#d6f36a; --orange:#ff8b5c; color:#f1f7ff; background:#071522; font-family:"Segoe UI",Tahoma,sans-serif; }
+body[data-theme="superfight"] .game-header { padding:12px 16px; border-bottom:3px solid var(--blue); background:#0d2435; box-shadow:0 5px 24px #0008; }
+body[data-theme="superfight"] .back-link,body[data-theme="superfight"] .small-button { min-height:40px; border:2px solid var(--blue); border-radius:6px; color:#f1f7ff; background:#12344a; box-shadow:3px 3px 0 #03101a; font-weight:800; }
+body[data-theme="superfight"] .back-link::before { content:"↩"; margin-right:7px; color:var(--lime); }
+body[data-theme="superfight"] .small-button:hover { color:#071522; background:var(--lime); }
+body[data-theme="superfight"] .hud { top:72px; right:18px; left:auto; bottom:auto; width:min(410px,calc(100vw - 36px)); padding:9px; border:2px solid var(--blue); border-radius:6px; background:#0d2435ee; box-shadow:5px 5px 0 #03101a99; }
+body[data-theme="superfight"] .hud::before { content:"MISSION CONTROL"; align-self:center; margin:0 8px; color:var(--lime); font-size:.64rem; font-weight:900; letter-spacing:.14em; }
+body[data-theme="superfight"] .hud-item { min-width:88px; padding:6px 9px; border:1px solid #55c7ff55; border-radius:3px; color:#f1f7ff; background:#55c7ff12; box-shadow:none; }
+body[data-theme="superfight"] .hud-item span { color:var(--blue); font-size:.62rem; font-style:normal; text-transform:uppercase; }
+body[data-theme="superfight"] .overlay { background:#071522dd; backdrop-filter:blur(5px); }
+body[data-theme="superfight"] .overlay-card { border:3px solid var(--lime); border-radius:8px; color:#f1f7ff; background:linear-gradient(135deg,#12344a,#0a1d2b); box-shadow:9px 9px 0 #0008; }
+body[data-theme="superfight"] .overlay-card::after { content:"⚡"; color:var(--orange); }
+body[data-theme="superfight"] .overlay-card h2 { color:var(--lime); text-transform:uppercase; letter-spacing:.06em; }
+body[data-theme="superfight"] .overlay-card p { color:#c9e7f5; }
+body[data-theme="superfight"] .eyebrow { border-block:2px solid var(--orange); color:var(--orange); font-family:ui-monospace,Consolas,monospace; }
+body[data-theme="superfight"] .primary-button { min-height:48px; border:2px solid var(--lime); border-radius:6px; color:#071522; background:var(--lime); box-shadow:4px 4px 0 #78942c; font-family:inherit; clip-path:none; }
+body[data-theme="superfight"] .touch-button { min-width:52px; min-height:52px; border:2px solid var(--orange); border-radius:6px; color:#071522; background:var(--orange); box-shadow:0 4px 0 #9d432a; font-family:inherit; }
+body[data-theme="superfight"] .touch-button.is-active { color:#fff; background:var(--blue); box-shadow:none; }
+@media (max-width:760px) { body[data-theme="superfight"] .hud { top:66px; right:10px; left:10px; width:auto; overflow-x:auto; flex-wrap:nowrap; } }
+@media (prefers-reduced-motion:reduce) { body[data-theme="superfight"] *,body[data-theme="superfight"] *::before,body[data-theme="superfight"] *::after { transition-duration:.01ms!important; } }

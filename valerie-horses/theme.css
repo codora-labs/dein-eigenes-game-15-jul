@@ -1,0 +1,17 @@
+body[data-theme="horses"] {
+  --bg: #172113;
+  --surface: rgba(34, 50, 24, .9);
+  --line: rgba(238, 224, 169, .25);
+  --text: #fff7db;
+  --muted: #c8d29e;
+  --accent: #f4c95d;
+  --accent-2: #d86b45;
+  --theme-glow: #526f2d;
+  font-family: Georgia, "Trebuchet MS", serif;
+}
+body[data-theme="horses"] .game-header { background: linear-gradient(90deg, rgba(23,33,19,.92), rgba(90,69,29,.72)); border-bottom: 3px solid var(--accent); }
+body[data-theme="horses"] .hud-item { border: 0; border-radius: 4px; background: rgba(22,31,17,.82); box-shadow: inset 0 -3px 0 var(--accent-2); }
+body[data-theme="horses"] .overlay { background: rgba(25, 38, 19, .72); }
+body[data-theme="horses"] .overlay-card { border: 3px solid var(--accent); border-radius: 8px; background: #26381c; box-shadow: 10px 10px 0 rgba(16,24,12,.45); }
+body[data-theme="horses"] .primary-button { border-radius: 5px; color: #2a1b0d; background: var(--accent); }
+body[data-theme="horses"] .touch-button[data-control="action"] { width: 104px; height: 64px; border-radius: 7px; color: #2a1b0d; background: var(--accent); }

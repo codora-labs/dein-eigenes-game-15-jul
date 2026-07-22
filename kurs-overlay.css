@@ -98,6 +98,23 @@
   transition: opacity 160ms ease, transform 160ms ease;
 }
 
+@media (hover: hover) and (pointer: fine) and (min-width: 761px) {
+  html.kurs-banner-sichtbar body[data-theme] .hud {
+    bottom: var(--kurs-banner-offset, 106px);
+  }
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  html.kurs-banner-sichtbar body[data-theme] .touch-controls,
+  html.kurs-banner-sichtbar body[data-theme] .coop-touch-controls {
+    bottom: var(--kurs-banner-offset, 122px);
+  }
+
+  html.kurs-banner-sichtbar .mobile-controls {
+    bottom: var(--kurs-banner-offset, 122px);
+  }
+}
+
 @media (max-width: 620px) {
   .kurs-banner {
     grid-template-columns: auto minmax(0, 1fr) auto;

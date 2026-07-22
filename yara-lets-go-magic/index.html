@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Lets go Magic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="beach.css">
+    <link rel="stylesheet" href="levels.css">
+    <link rel="stylesheet" href="../kurs-overlay.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Lets go Magic</h1>
+        <div class="hud"><span>Äpfel: <b id="score">0</b></span><span>Treffer: <b id="hits">0</b></span></div>
+      </header>
+      <section id="game">
+        <div id="player">🦄</div>
+        <div id="entities"></div>
+        <div class="mobile-controls magic-controls" aria-label="Touch-Steuerung">
+          <div class="flight-controls">
+            <button type="button" data-magic-control="up" aria-label="Nach oben fliegen">▲</button>
+            <button type="button" data-magic-control="down" aria-label="Nach unten fliegen">▼</button>
+          </div>
+          <button type="button" data-magic-control="fire">Magie ✨</button>
+        </div>
+        <div id="message" class="hidden"><h2>Game Over</h2><p id="messageText"></p><button id="restart">Nochmal fliegen</button></div>
+      </section>
+      <p class="help">▲ / ▼ fliegen · Esc schießt Magie · Feuer ausweichen</p>
+    </main>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <script src="levels.js"></script>
+    <script src="../kurs-overlay.js"></script>
+  </body>
+</html>

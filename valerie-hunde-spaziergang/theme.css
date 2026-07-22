@@ -1,0 +1,6 @@
+body[data-theme="hunde-spaziergang"] { --bg:#193746; --surface:rgba(19,54,62,.9); --line:rgba(255,235,178,.28); --text:#fff8df; --muted:#c9dfca; --accent:#ffd166; --accent-2:#ff8c69; --theme-glow:#347b78; font-family:"Trebuchet MS",system-ui,sans-serif; }
+body[data-theme="hunde-spaziergang"] .game-header { background:linear-gradient(90deg,rgba(13,44,53,.94),rgba(39,94,86,.8)); border-bottom:4px solid var(--accent); }
+body[data-theme="hunde-spaziergang"] .hud-item { border:0; border-radius:8px; background:rgba(14,49,57,.86); box-shadow:inset 0 -3px 0 var(--accent-2); }
+body[data-theme="hunde-spaziergang"] .overlay-card { border:3px solid var(--accent); border-radius:18px; background:#1c5056; box-shadow:9px 9px 0 rgba(7,29,36,.45); }
+body[data-theme="hunde-spaziergang"] .primary-button { border-radius:8px; color:#24353b; background:var(--accent); }
+body[data-theme="hunde-spaziergang"] .touch-button[data-control="action"] { width:110px; height:66px; border-radius:12px; color:#24353b; background:var(--accent); }

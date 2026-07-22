@@ -1,0 +1,125 @@
+:root {
+  color-scheme: dark;
+  --bg: #080b19;
+  --surface: rgba(19, 27, 57, 0.9);
+  --line: rgba(255, 255, 255, 0.14);
+  --text: #f5f7ff;
+  --muted: #b8c1e5;
+  --accent: #72e5ff;
+  --accent-2: #fff078;
+  font-family: Inter, ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; overscroll-behavior: none; }
+body {
+  min-height: 100svh;
+  color: var(--text);
+  background: radial-gradient(circle at 15% 0%, #293472 0, transparent 36rem), var(--bg);
+}
+button, a { color: inherit; font: inherit; }
+button { border: 0; }
+button:focus-visible, a:focus-visible, canvas:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.eyebrow { margin: 0 0 4px; color: var(--accent); font-size: .72rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+
+.game-shell {
+  width: min(1240px, 100%);
+  min-height: 100svh;
+  margin: auto;
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  display: grid;
+  grid-template-rows: auto auto minmax(360px, 1fr) auto;
+  gap: 10px;
+}
+.game-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(120deg, var(--surface), rgba(255,255,255,.035)); }
+.title-group { display: flex; align-items: center; gap: 14px; }
+.title-group h1 { margin: 0; font-size: clamp(1.3rem, 3vw, 2rem); }
+.back-link { color: var(--muted); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.actions { display: flex; gap: 7px; }
+.small-button, .primary-button {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  background: var(--surface);
+  font-weight: 750;
+}
+.primary-button { min-width: 170px; color: #13172b; background: linear-gradient(135deg, var(--accent-2), var(--accent)); }
+.hud { display: flex; gap: 8px; overflow-x: auto; }
+.hud-item { min-width: 115px; padding: 8px 12px; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 13px; background: var(--surface); }
+.hud-item span { display: block; color: var(--muted); font-size: .72rem; }
+.hud-item strong { font-variant-numeric: tabular-nums; }
+.stage { position: relative; min-height: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #070b1b; box-shadow: 0 22px 55px rgba(0,0,0,.32), 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent) inset; }
+canvas { display: block; width: 100%; height: 100%; min-height: 360px; touch-action: none; }
+.overlay { position: absolute; z-index: 4; inset: 0; display: grid; place-items: center; padding: 18px; background: rgba(5,8,22,.64); backdrop-filter: blur(6px); }
+.overlay[hidden] { display: none; }
+.overlay-card { width: min(450px, 100%); padding: clamp(22px, 5vw, 36px); border: 1px solid var(--line); border-radius: 23px; text-align: center; background: rgba(18,25,53,.96); }
+.overlay-card h2 { margin: 0 0 10px; font-size: clamp(1.6rem, 5vw, 2.5rem); }
+.overlay-card p { color: var(--muted); line-height: 1.5; }
+.instructions { margin: 0; color: var(--muted); text-align: center; font-size: .84rem; }
+.touch-controls { position: absolute; z-index: 3; inset: auto 12px 12px; display: none; justify-content: space-between; align-items: flex-end; pointer-events: none; }
+.dpad { display: grid; grid-template-areas: ". up ." "left down right"; gap: 4px; }
+.touch-button { width: 56px; height: 56px; border: 1px solid rgba(255,255,255,.22); border-radius: 17px; pointer-events: auto; touch-action: none; user-select: none; background: rgba(13,19,43,.82); font-weight: 850; }
+.touch-button[data-control="up"] { grid-area: up; }
+.touch-button[data-control="left"] { grid-area: left; }
+.touch-button[data-control="down"] { grid-area: down; }
+.touch-button[data-control="right"] { grid-area: right; }
+.touch-button[data-control="action"] { width: 76px; height: 76px; border-radius: 50%; color: #18192b; background: rgba(255,231,105,.94); }
+.touch-button.is-active { transform: scale(.94); background: rgba(105,230,255,.5); }
+.pointer-game .touch-controls { display: none !important; }
+.coop-touch-controls { position: absolute; z-index: 9; inset: auto 12px max(12px, env(safe-area-inset-bottom)); display: none; align-items: flex-end; justify-content: space-between; pointer-events: none; }
+.coop-control-group { display: grid; justify-items: center; gap: 6px; color: #fff; font-size: .72rem; font-weight: 850; text-shadow: 0 2px 5px rgba(0,0,0,.8); }
+.coop-control-group .touch-button { pointer-events: auto; }
+
+body[data-theme] { background: radial-gradient(circle at 16% 0%, var(--theme-glow), transparent 34rem), radial-gradient(circle at 92% 100%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 30rem), var(--bg); }
+body[data-theme] .eyebrow { color: var(--accent); }
+body[data-theme] .game-header { border-color: color-mix(in srgb, var(--accent) 28%, var(--line)); }
+body[data-theme] .small-button:hover { background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  .touch-controls { display: flex; }
+  .coop-game .touch-controls { display: none !important; }
+  .coop-game .coop-touch-controls { display: flex; }
+  .instructions { display: none; }
+}
+@media (max-width: 620px) {
+  .game-shell { grid-template-rows: auto auto minmax(390px, 1fr); }
+  .title-group { display: block; }
+  .title-group .back-link { font-size: .78rem; }
+  .actions { flex-direction: column; }
+  .small-button { min-height: 36px; padding: 6px 10px; font-size: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition-duration: .01ms !important; } }
+
+/* Immersive game layout: the canvas owns the complete browser viewport. */
+body[data-theme] { overflow: hidden; }
+body[data-theme] .game-shell { position: relative; width: 100vw; height: 100svh; min-height: 100svh; margin: 0; padding: 0; display: block; }
+body[data-theme] .stage { position: fixed; z-index: 1; inset: 0; width: 100vw; height: 100svh; min-height: 0; border: 0; border-radius: 0; box-shadow: none; }
+body[data-theme] canvas { width: 100%; height: 100%; min-height: 0; }
+body[data-theme] .game-header { position: fixed; z-index: 8; inset: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) auto max(10px, env(safe-area-inset-left)); padding: 0; border: 0; background: transparent; pointer-events: none; }
+body[data-theme] .game-header .back-link,
+body[data-theme] .game-header .actions { pointer-events: auto; }
+body[data-theme] .title-group h1 { display: none; }
+body[data-theme] .title-group { display: block; }
+body[data-theme] .back-link,
+body[data-theme] .small-button { min-height: 42px; display: inline-flex; align-items: center; padding: 8px 13px; border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--line)); border-radius: 999px; color: var(--text); background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0,0,0,.2); text-decoration: none; }
+body[data-theme] .hud { position: fixed; z-index: 7; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); width: min(720px, calc(100vw - 200px)); transform: translateX(-50%); justify-content: center; padding: 0; pointer-events: none; }
+body[data-theme] .hud-item { min-width: 105px; padding: 7px 11px; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+body[data-theme] .instructions { display: none; }
+body[data-theme] .overlay { position: fixed; z-index: 12; }
+body[data-theme] .touch-controls { z-index: 9; }
+
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  body[data-theme] .hud { top: calc(max(10px, env(safe-area-inset-top)) + 55px); bottom: auto; width: calc(100vw - 20px); justify-content: flex-start; }
+  body[data-theme] .hud-item { min-width: 88px; }
+  body[data-theme].coop-game .coop-touch-controls { position: fixed; left: 8px; right: 8px; }
+  body[data-theme].coop-game .coop-control-group { gap: 3px; }
+  body[data-theme].coop-game .coop-control-group .touch-button { width: 46px; height: 46px; border-radius: 14px; }
+}
+
+@media (max-width: 620px) {
+  body[data-theme] .game-shell { display: block; }
+  body[data-theme] .actions { flex-direction: row; }
+  body[data-theme] .small-button { min-height: 38px; }
+}

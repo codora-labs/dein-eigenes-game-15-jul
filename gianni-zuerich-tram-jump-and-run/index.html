@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b4f9c" />
+    <title>Zürich Tram Jump and Run</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="../kurs-overlay.css" />
+  </head>
+  <body data-theme="zurich-tram">
+    <main class="game-shell">
+      <header class="game-header">
+        <div class="title-group"><a class="back-link" href="../index.html">← Übersicht</a><h1 id="title">Zürich Tram Jump and Run</h1></div>
+        <div class="actions"><button id="pause-button" class="small-button" type="button">Pause</button><button id="restart-button" class="small-button" type="button">Neustart</button></div>
+      </header>
+      <section id="hud" class="hud" aria-label="Spielstatus"></section>
+      <section class="stage">
+        <canvas id="game-canvas" width="960" height="600" tabindex="0" aria-label="Zürich Tram Jump and Run"></canvas>
+        <div id="overlay" class="overlay"><div class="overlay-card"><p class="eyebrow">Linie ZH</p><h2 id="overlay-title"></h2><p id="overlay-message"></p><button id="overlay-action" class="primary-button" type="button"></button></div></div>
+        <div class="touch-controls" aria-label="Touch-Steuerung"><button class="touch-button" data-control="left" type="button">Bremsen</button><button class="touch-button jump-control" data-control="action" type="button">Springen</button><button class="touch-button" data-control="right" type="button">Turbo</button></div>
+      </section>
+      <p id="instructions" class="instructions"></p>
+    </main>
+    <script src="engine.js"></script>
+    <script src="game.js"></script>
+    <script src="../kurs-overlay.js"></script>
+  </body>
+</html>

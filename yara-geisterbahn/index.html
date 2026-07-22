@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geisterbahn</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../kurs-overlay.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header>
+      <div><p class="eyebrow">MAGISCHE NACHTFAHRT</p><h1>Geisterbahn</h1></div>
+      <div class="stats"><span>Zeit <strong id="time">0.0 s</strong></span><span>Geister <strong id="score">0</strong></span><span>Rekord <strong id="best">0</strong></span></div>
+    </header>
+    <section id="arena" class="arena" tabindex="0" aria-label="Spielarena">
+      <div class="moon"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+      <div id="player" class="sprite unicorn">🦄</div>
+      <div id="entities"></div>
+      <div class="mobile-controls ghost-controls" aria-label="Touch-Steuerung">
+        <div class="flight-controls"><button type="button" data-ghost-control="up" aria-label="Nach oben fliegen">▲</button><button type="button" data-ghost-control="down" aria-label="Nach unten fliegen">▼</button></div>
+        <div class="shot-controls"><button type="button" data-ghost-control="fire">Feuer 🔥</button><button type="button" data-ghost-control="ice">Eis ❄️</button></div>
+      </div>
+      <div id="startOverlay" class="overlay"><h2>Bereit?</h2><p>Weiche aus und besiege die Spuk-Bande!</p><button id="start">Spiel starten</button></div>
+    </section>
+    <footer><span>↑ ↓ Fliegen</span><span><kbd>ESC</kbd> Feuerball gegen Geister</span><span><kbd>ENTER</kbd> Eisstrahl gegen Drachen</span><button id="restart">Neu starten</button></footer>
+  </main>
+  <script src="script.js"></script>
+  <script src="../kurs-overlay.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body[data-theme="eishokei"] { --ice: #dff8ff; --ink: #09253a; --navy: #071d36; --red: #f05d68; --gold: #ffd166; background: radial-gradient(circle at 50% 0%, #16496a, #061526 70%); color: #effcff; font-family: "Trebuchet MS", system-ui, sans-serif; }
+body[data-theme="eishokei"] .game-shell { max-width: 1180px; }
+body[data-theme="eishokei"] .game-header { border-bottom: 2px solid #45c7e5; background: rgba(4, 25, 45, .82); }
+body[data-theme="eishokei"] .back-link { color: #9cefff; }
+body[data-theme="eishokei"] .small-button, body[data-theme="eishokei"] .primary-button { border: 2px solid #72e6f5; border-radius: 999px; background: #0b3855; color: #eaffff; box-shadow: 0 4px 0 #03121f; }
+body[data-theme="eishokei"] .small-button:hover, body[data-theme="eishokei"] .primary-button:hover { background: #126487; transform: translateY(-1px); }
+body[data-theme="eishokei"] .hud { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+body[data-theme="eishokei"] .hud-item { min-width: 108px; padding: 9px 16px; border: 1px solid #67d9ee; border-radius: 12px; background: rgba(5, 32, 53, .9); text-align: center; }
+body[data-theme="eishokei"] .hud-item strong { color: var(--gold); }
+body[data-theme="eishokei"] .stage { border: 5px solid #b8f3ff; border-radius: 26px; background: var(--ice); box-shadow: 0 0 0 8px rgba(65, 194, 227, .15), 0 20px 50px rgba(0,0,0,.35); overflow: hidden; }
+body[data-theme="eishokei"] .instructions { color: #b7eaf4; }
+body[data-theme="eishokei"] .overlay-card { border: 2px solid #7ce8f2; border-radius: 22px; background: rgba(3, 26, 47, .96); box-shadow: 0 18px 60px #020c18; }
+body[data-theme="eishokei"] .motorcycle-control-group { display: flex; gap: 8px; align-items: flex-end; }
+body[data-theme="eishokei"] .motorcycle-controls .touch-button { width: auto; min-width: 58px; height: 58px; padding: 8px 12px; color: #effcff; background: rgba(5, 45, 70, .9); }
+body[data-theme="eishokei"] .motorcycle-controls .touch-button[data-control="action"] { width: 76px; height: 76px; color: #09253a; background: rgba(255, 209, 102, .96); }
+body[data-theme="eishokei"] .motorcycle-controls .shoot-control { color: #09253a; background: rgba(114, 230, 245, .96); }
+@media (max-width: 700px) { body[data-theme="eishokei"] .game-header { align-items: flex-start; } body[data-theme="eishokei"] .stage { border-width: 3px; border-radius: 16px; } }

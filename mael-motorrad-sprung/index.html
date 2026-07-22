@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Motorrad-Sprung</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="../kurs-overlay.css" />
+  </head>
+  <body data-theme="eishokei">
+    <main class="game-shell">
+      <header class="game-header"><div class="title-group"><a class="back-link" href="../index.html">← Übersicht</a><h1 id="title">Motorrad-Sprung</h1></div><div class="actions"><button id="pause-button" class="small-button" type="button">Pause</button><button id="restart-button" class="small-button" type="button">Neustart</button></div></header>
+      <section id="hud" class="hud" aria-label="Spielstand"></section>
+      <section class="stage"><canvas id="game-canvas" width="960" height="600" tabindex="0" aria-label="Motorrad-Sprungstrecke"></canvas><div id="overlay" class="overlay"><div class="overlay-card"><p class="eyebrow">Motorrad auf der Sprungstrecke</p><h2 id="overlay-title"></h2><p id="overlay-message"></p><button id="overlay-action" class="primary-button" type="button"></button></div></div><div class="touch-controls motorcycle-controls" aria-label="Touch-Steuerung"><div class="motorcycle-control-group"><button class="touch-button" data-control="up" type="button" aria-label="Rückwärts drehen">↺</button><button class="touch-button" data-control="down" type="button" aria-label="Vorwärts drehen">↻</button><button class="touch-button" data-control="right" type="button">Turbo</button></div><div class="motorcycle-control-group"><button class="touch-button shoot-control" data-control="shoot" type="button">Schuss</button><button class="touch-button" data-control="action" type="button">Sprung</button></div></div></section>
+      <p id="instructions" class="instructions"></p>
+    </main>
+    <script src="engine.js"></script><script src="game.js"></script><script src="../kurs-overlay.js"></script>
+  </body>
+</html>

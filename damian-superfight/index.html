@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#090d20" />
+    <title>Superfight</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="../kurs-overlay.css" />
+  </head>
+  <body data-theme="superfight">
+    <main class="game-shell">
+      <header class="game-header">
+        <div class="title-group"><a class="back-link" href="../index.html">← Übersicht</a><h1 id="title">Superfight</h1></div>
+        <div class="actions"><button id="pause-button" class="small-button" type="button">Pause</button><button id="restart-button" class="small-button" type="button">Neustart</button></div>
+      </header>
+      <section id="hud" class="hud" aria-label="Spielstatus"></section>
+      <section class="stage">
+        <canvas id="game-canvas" width="960" height="600" tabindex="0" aria-label="Browser-Spiel"></canvas>
+        <div id="overlay" class="overlay"><div class="overlay-card"><p class="eyebrow">Browser-Spiel</p><h2 id="overlay-title"></h2><p id="overlay-message"></p><button id="overlay-action" class="primary-button" type="button"></button></div></div>
+        <div class="touch-controls"><div class="dpad"><button class="touch-button" data-control="up" type="button">▲</button><button class="touch-button" data-control="left" type="button">◀</button><button class="touch-button" data-control="down" type="button">▼</button><button class="touch-button" data-control="right" type="button">▶</button></div><button class="touch-button" data-control="action" type="button">Aktion</button></div>
+        <div class="coop-touch-controls" aria-label="Touch-Steuerung für zwei Personen">
+          <div class="coop-control-group"><span>Spieler 1</span><div class="dpad"><button class="touch-button" data-control="p1up" type="button">▲</button><button class="touch-button" data-control="p1left" type="button">◀</button><button class="touch-button" data-control="p1down" type="button">▼</button><button class="touch-button" data-control="p1right" type="button">▶</button></div></div>
+          <div class="coop-control-group"><span>Spieler 2</span><div class="dpad"><button class="touch-button" data-control="p2up" type="button">▲</button><button class="touch-button" data-control="p2left" type="button">◀</button><button class="touch-button" data-control="p2down" type="button">▼</button><button class="touch-button" data-control="p2right" type="button">▶</button></div></div>
+        </div>
+      </section>
+      <p id="instructions" class="instructions"></p>
+    </main>
+    <script src="engine.js"></script>
+    <script src="game.js"></script>
+    <script src="../kurs-overlay.js"></script>
+  </body>
+</html>
